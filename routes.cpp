@@ -8,13 +8,13 @@ crow::response add(const crow::request &req)
 {
     auto input = crow::json::load(req.body);
     int sum = input["first"].i() + input["second"].i();
-    json result = {"result", sum};
+    crow::json result = {"result", sum};
     return crow::response{200, result};
 }
 crow::response subtract(const crow::request &req)
 {
     auto input = crow::json::load(req.body);
     int diff = input["first"].i() - input["second"].i();
-    json resp = {"result", diff};
+    crow::json resp = {"result", diff};
     return crow::response{200, resp};
 }
